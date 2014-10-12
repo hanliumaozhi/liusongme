@@ -8,7 +8,8 @@ from app import app
 import json
 import sqlite3
 
-DATABASE = './app/db/mc.db'
+#DATABASE = './app/db/mc.db'
+DATABASE = '/opt/virtualenvs/flaskapp/liusongme/app/db/mc.db'
 
 def connect_to_database():
     return sqlite3.connect(DATABASE)
