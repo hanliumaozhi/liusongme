@@ -16,10 +16,8 @@ def connect_to_database():
 
 def get_db():
     db = getattr(g, '_database', None)
-    print '3'
     if db is None:
         db = g._database = connect_to_database()
-    print '4'
     return db
 
 @app.teardown_appcontext
@@ -50,12 +48,10 @@ def show_mc_user_online_time():
     if request.method == 'GET':
         return render_template("show_mc.html")
     else:
-        print "1"
         db = get_db()
         cur = db.cursor()
         cur.execute("select * from MC_user_online_time")
         the_res = cur.fetchall()
-        print "2"
         data_dict = dict()
         data_list = list()
         for i in the_res:
