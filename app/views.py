@@ -15,8 +15,10 @@ def connect_to_database():
 
 def get_db():
     db = getattr(g, '_database', None)
+    print '3'
     if db is None:
         db = g._database = connect_to_database()
+    print '4'
     return db
 
 @app.teardown_appcontext
