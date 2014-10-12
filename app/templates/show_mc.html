@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <title>minecraft在线时间统计</title>
+		<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+        <meta charset="utf-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+		
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/css/layout.css">
+		<link rel="stylesheet" href="/static/css/min_layout.css">
+    </head>
+	<body>
+		<header class="navbar-fixed-top">
+			<div class="container">
+				<nav role="navigation" class="navbar navbar-default navbar-inverse">
+					<div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbar-collapse" class="navbar-toggle"><span class="sr-only">展开导航</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+						<a href="/show_mc_user_online_time" class="navbar-brand">minecraft在线时间统计</a>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<table class="table table-bordered" id="myTable">
+			<tr>
+			<td class="col-md-2 text-center">账号</td>
+			<td class="col-md-2 text-center">已兑换时间(分钟)</td>
+			<td class="col-md-2 text-center">未兑换时间(分钟)</td>
+			</tr>
+			<tr>
+			<th colspan="3">
+			<div class="progress">
+		  		<div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+		 	   	</div>
+			</div>
+			</th>
+			</tr>
+			</table>
+		</div>
+		</div>
+		
+		<!-- scripts -->
+		<script src="http://lib.sinaapp.com/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+		<script src="/static/js/show_mc.js"></script>
+	</body>
+</html>
