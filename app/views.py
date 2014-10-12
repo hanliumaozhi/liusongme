@@ -61,8 +61,8 @@ def show_mc_user_online_time():
 @app.route('/update_mc_online_time', methods=['POST'])        
 def update_mc_online_time():
     if request.method == 'POST':
-        user_name = request.json.get('user_name')
-        online_time = int(request.json.get('online_time'))
+        user_name = request.form['user_name']
+        online_time = int(request.form['online_time'])
         db = get_db()
         cur = db.cursor()
         cur.execute("select * from MC_user_online_time where user_name = '%s'" % user_name)
