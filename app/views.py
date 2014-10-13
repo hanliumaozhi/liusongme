@@ -63,9 +63,11 @@ def update_mc_online_time():
     if request.method == 'POST':
         print "xxx"
         print request.form['user_name']
+        print int(request.form['online_time'])
         user_name = request.form['user_name']
         online_time = int(request.form['online_time'])
         db = get_db()
+        print "4"
         cur = db.cursor()
         print "2"
         cur.execute("select * from MC_user_online_time where user_name = '%s'" % user_name)
