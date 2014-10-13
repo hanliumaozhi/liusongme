@@ -67,8 +67,10 @@ def update_mc_online_time():
         online_time = int(request.form['online_time'])
         db = get_db()
         cur = db.cursor()
+        print "2"
         cur.execute("select * from MC_user_online_time where user_name = '%s'" % user_name)
         the_res = cur.fetchall()
+        print "3"
         if len(the_res) == 0:
              cur.execute("insert into MC_user_online_time values (?,?,?)", (user_name, 0, online_time))
              db.commit()
