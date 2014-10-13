@@ -101,6 +101,8 @@ def show_mc_user_online_time():
 @app.route('/update_mc_online_time', methods=['POST'])        
 def update_mc_online_time():
     if request.method == 'POST':
+        print "xxx"
+        print request.form['user_name']
         user_name = request.form['user_name']
         online_time = int(request.form['online_time'])
         db = get_db()
