@@ -76,7 +76,9 @@ def update_mc_online_time():
         if len(the_res) == 0:
             print "5"
             cur.execute("insert into MC_user_online_time values (?,?,?)", (user_name, 0, online_time))
+            print "6"
             db.commit()
+            print "7"
         else:
             cur.execute("select * from MC_user_online_time where user_name = '%s'" % user_name)
             cur_time = cur.fetchall()[0][2]
