@@ -81,7 +81,8 @@ def update_mc_online_time():
             cur_time = cur.fetchall()[0][2]
             cur.execute("update MC_user_online_time set current_time_length= ? where user_name = ? ", ((cur_time+online_time),user_name))
             db.commit()
-        return json.dumps({'data': "ok"})
+        print "10"
+        return "xx"
     
     
     
