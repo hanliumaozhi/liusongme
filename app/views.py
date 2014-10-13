@@ -75,7 +75,7 @@ def update_mc_online_time():
         print "3"
         if len(the_res) == 0:
             print "5"
-            cur.execute("insert into MC_user_online_time values (?,?,?)", (user_name, 0, online_time))
+            cur.execute("insert into MC_user_online_time (user_name, pre_total_time, current_time_length) values (?,?,?)", (user_name, 0, online_time))
             print "6"
             db.commit()
             print "7"
