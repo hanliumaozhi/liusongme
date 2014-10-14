@@ -56,7 +56,7 @@ def show_mc_user_online_time():
         data_list = list()
         for i in the_res:
             data_list.append([i[0], str(i[1]), str(i[2])])
-        data_list.sort(key = lambda x : x[2], reverse = True)
+        data_list.sort(key = lambda x : int(x[2]), reverse = True)
         return json.dumps({'data': data_list, 'isSuccess': 'True'})
 
 @app.route('/update_mc_online_time', methods=['POST'])        
