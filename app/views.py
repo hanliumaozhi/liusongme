@@ -56,35 +56,26 @@ def show_mc_user_online_time():
         data_list = list()
         for i in the_res:
             data_list.append([i[0], str(i[1]), str(i[2])])
+        data_list.sort(key = lambda x : x[2], reverse = True)
         return json.dumps({'data': data_list, 'isSuccess': 'True'})
 
 @app.route('/update_mc_online_time', methods=['POST'])        
 def update_mc_online_time():
     if request.method == 'POST':
-        print "xxx"
-        print request.form['user_name']
-        print int(request.form['online_time'])
         user_name = request.form['user_name']
         online_time = int(request.form['online_time'])
         db = get_db()
-        print "4"
         cur = db.cursor()
-        print "2"
         cur.execute("select * from MC_user_online_time where user_name = '%s'" % user_name)
         the_res = cur.fetchall()
-        print "3"
         if len(the_res) == 0:
-            print "5"
             cur.execute("insert into MC_user_online_time (user_name, pre_total_time, current_time_length) values (?,?,?)", (user_name, 0, online_time))
-            print "6"
             db.commit()
-            print "7"
         else:
             cur.execute("select * from MC_user_online_time where user_name = '%s'" % user_name)
             cur_time = cur.fetchall()[0][2]
             cur.execute("update MC_user_online_time set current_time_length= ? where user_name = ? ", ((cur_time+online_time),user_name))
             db.commit()
-        print "10"
         return "xx"
     
     
