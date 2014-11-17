@@ -77,7 +77,13 @@ def update_mc_online_time():
             cur.execute("update MC_user_online_time set current_time_length= ? where user_name = ? ", ((cur_time+online_time),user_name))
             db.commit()
         return "xx"
-    
+
+@app.route('/vpn_info', methods=['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        return render_template("vpn.html")
+    else:
+        return json.dumps({'data':"null"})   
     
     
     
