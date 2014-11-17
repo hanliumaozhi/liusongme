@@ -79,7 +79,7 @@ def update_mc_online_time():
         return "xx"
 
 @app.route('/vpn_info', methods=['GET', 'POST'])
-def index():
+def vpn_info():
     if request.method == 'GET':
         return render_template("vpn.html")
     else:
