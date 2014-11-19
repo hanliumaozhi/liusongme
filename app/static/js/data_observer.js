@@ -8,6 +8,7 @@ $(document).ready(function(){
 		$("#myTable").append(update_str);
 		lc = new LineChart({
 			parent: '#myGraph',
+			x_parse: d3.time.format("%d/%m/%Y").parse,
 			x_scale: d3.time.scale()
 		});
 		lc.for([obj]).plot();
