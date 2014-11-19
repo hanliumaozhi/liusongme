@@ -90,8 +90,7 @@ def data_observer():
     if request.method == 'GET':
         return render_template("data_observer.html")
     else:
-        data_to_draw = dict()
-        data_to_draw['values'] = [{'x': 'new Date(1953, 0, 0, 0, 0, 0, 0)', 'y': '5.82'}, {'x': 'new Date(1964, 0, 0, 0, 0, 0, 0)', 'y': '6.95'}, {'x': 'new Date(1982, 0, 0, 0, 0, 0, 0)', 'y': '10.08'}, {'x': 'new Date(1990, 0, 0, 0, 0, 0, 0)', 'y': '11.34'}, {'x': 'new Date(2000, 0, 0, 0, 0, 0, 0)', 'y': '12.66'}]
+        data_to_draw = [{'x': 'new Date(1953, 0, 0, 0, 0, 0, 0)', 'y': 5.82}, {'x': 'new Date(1964, 0, 0, 0, 0, 0, 0)', 'y': 6.95}, {'x': 'new Date(1982, 0, 0, 0, 0, 0, 0)', 'y': 10.08}, {'x': 'new Date(1990, 0, 0, 0, 0, 0, 0)', 'y': 11.34}, {'x': 'new Date(2000, 0, 0, 0, 0, 0, 0)', 'y': 12.66}]
         return json.dumps({'name': u'人口', 'values': data_to_draw})      
     
     
