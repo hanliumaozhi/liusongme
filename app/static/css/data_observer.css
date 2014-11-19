@@ -1,0 +1,28 @@
+		.line { fill: none; }	
+		#tooltip {
+			position: absolute;
+			width: 200px;
+			height: auto;
+			padding: 10px;
+			background-color: white;
+			-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+			-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+			box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+			pointer-events: none;
+		}
+		#tooltip.hidden {
+			display: none;
+		}
+		#tooltip p {
+			margin: 0;
+			font-family: sans-serif;
+		}
+		#tooltip .title {
+			text-decoration: underline;
+		}
+		.commit-circle, .legend-circle {
+			stroke-width: 0.22em;
+		}
+		.commit-circle.selected, .legend-circle.selected {
+			stroke-width: 0.40em;
+		}
